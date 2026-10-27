@@ -7,7 +7,7 @@ import { Handbag } from 'lucide-react'
 const Navbar = () => {
     return (
         <Container>
-            <nav className='flex items-center justify-between py-5 text-white'>
+            <nav className='flex items-center justify-between py-5 text-white relative z-10'>
                 <Link
                     href={'/'}
                     className='text-2xl font-heading font-bold tracking-wider'>
