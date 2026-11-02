@@ -10,7 +10,7 @@ const Navbar = () => {
             <nav className='flex items-center justify-between py-5 text-white relative z-10'>
                 <Link
                     href={'/'}
-                    className='text-2xl font-heading font-bold tracking-wider'>
+                    className='text-2xl font-heading font-bold tracking-widest hover:text-highlight transition-colors ease-linear duration-300'>
                     Panto
                 </Link>
                 <ul className='flex items-center justify-center gap-15 max-lg:hidden'>
@@ -18,17 +18,18 @@ const Navbar = () => {
                         return <Link
                             key={opt.label}
                             href={opt.href}
-                            className='text-lg font-heading'>
+                            className='text-lg font-heading tracking-widest transition-all ease-linear duration-300 hover:text-highlight relative group/nav'>
                             <li>
                                 {opt.label}
                             </li>
+                            <span className='w-0 h-px bg-highlight absolute left-0 bottom-0 group-hover/nav:w-full transition-all ease-linear duration-200'></span>
                         </Link>
                     })}
                 </ul>
 
                 <div>
-                    <span>
-                        <Handbag />
+                    <span className='hover:text-highlight transition-colors ease-linear duration-300 cursor-pointer group'>
+                        <Handbag className='group-hover:-translate-y-0.5 transition-transform ease-linear duration-300'/>
                     </span>
                 </div>
             </nav>
