@@ -20,13 +20,13 @@ const HeroSection = () => {
                 <div className='absolute inset-0 bg-black/70' />
             </div>
 
-            <div className='relative z-10 flex flex-col items-center gap-7 px-5'>
+            <div className='relative z-10 flex flex-col items-center gap-7 px-3'>
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: .70, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className='text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-center lg:max-w-6xl'>
+                    className='text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-center lg:max-w-6xl'>
                     Make your interior more <span className='text-highlight'>minimalistic</span> & <span className='text-highlight'>modern</span>
                 </motion.h1>
                 <motion.p
