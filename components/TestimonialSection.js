@@ -1,23 +1,40 @@
+'use client'
 import React from 'react'
 import Container from './Container'
 import Image from 'next/image'
 import { testimonials } from '@/constants/testimonials'
 import { Star } from 'lucide-react'
+import { motion } from 'motion/react'
+
 
 const TestimonialSection = () => {
     return (
         <div className='bg-white'>
             <Container>
-                <section className='min-h-screen flex flex-col items-center justify-center gap-15'>
+                <section className='min-h-screen flex flex-col items-center justify-center gap-15 py-15'>
                     <div className='flex flex-col items-center justify-center gap-3'>
-                        <span className='uppercase text-highlight font-heading font-semibold text-sm'>Testimonials</span>
-                        <h2 className='text-4xl font-heading font-bold tracking-wider text-primary lg:max-w-xl'>Our Client Review</h2>
+                        <motion.span
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .70, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className='uppercase text-highlight font-heading font-semibold text-sm'>Testimonials</motion.span>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: .70, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className='text-3xl lg:text-4xl font-heading font-bold tracking-wider text-primary lg:max-w-xl'>Our Client Review</motion.h2>
                     </div>
                     <div className='flex items-center justify-center gap-5 flex-wrap'>
-                        {testimonials.map(item => {
-                            return <div
+                        {testimonials.map((item, index) => {
+                            return <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: .70, delay: 0.2 * index }}
+                                viewport={{ once: true }}
                                 key={item.id}
-                                className='relative w-80 h-110 flex items-end justify-center py-3'>
+                                className='relative w-80 h-110 flex items-end justify-center py-3 cursor-pointer'>
                                 <Image
                                     src={item.image}
                                     alt={'Exp'}
@@ -32,7 +49,7 @@ const TestimonialSection = () => {
                                         <h3 className='font-heading font-bold text-xl text-primary'>{item.name}</h3>
                                         <h4 className='font-heading font-semibold text-sm text-secondary/40'>{item.role}</h4>
                                     </div>
-                                    <p className='text-center text-sm text-secondary/50'>"{item.review}"</p>
+                                    <p className='text-center text-sm text-secondary/60'>"{item.review}"</p>
 
                                     <div className='flex items-center justify-center gap-1'>
                                         {[...Array(5)].map((_, index) => {
@@ -42,7 +59,7 @@ const TestimonialSection = () => {
                                         })}
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         })}
                     </div>
                 </section>
