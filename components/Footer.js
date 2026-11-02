@@ -6,13 +6,13 @@ const Footer = () => {
     return (
         <footer>
             <Container>
-                <div className='flex items-start py-15'>
-                    <div className='lg:w-1/2 flex flex-col gap-7'>
-                        <h2 className='lg:text-4xl font-heading font-bold tracking-widest'>Panto</h2>
+                <div className='flex items-start py-15 max-lg:flex-col gap-5 max-lg:gap-10'>
+                    <div className='lg:w-1/2 flex flex-col gap-3 lg:gap-7'>
+                        <h2 className='text-3xl lg:text-4xl font-heading font-bold tracking-widest'>Panto</h2>
                         <p className='lg:max-w-xl text-secondary/60'>The advantage of hiring a workspace with us is that givees you comfortable service and all-around facilities.</p>
                     </div>
 
-                    <div className='flex items-center justify-between gap-7 lg:w-1/2'>
+                    <div className='flex items-center justify-between gap-7 w-full lg:w-1/2 max-lg:flex-wrap'>
                         <div className='flex flex-col gap-7'>
                             <h3 className='font-heading text-highlight font-semibold'>Services</h3>
                             <ul className='flex flex-col items-start gap-2 text-secondary/60'>
@@ -87,11 +87,12 @@ const Footer = () => {
                         </div>
 
                     </div>
+
                 </div>
             </Container>
             <div className='bg-secondary/50 w-full h-px'></div>
             <Container>
-                <div className='flex items-center justify-between py-5'>
+                <div className='flex items-center justify-between py-5 max-md:flex-col gap-3'>
                     <div className='text-secondary/60 font-semibold'>Copyright &copy; 2026</div>
                     <div className='space-x-10'>
                         <Link
