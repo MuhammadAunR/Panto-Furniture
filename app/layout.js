@@ -2,6 +2,8 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
+import AppWrapper from "./context/AppWrapper";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -28,9 +30,12 @@ export default function RootLayout({ children }) {
       className={`${montserrat.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        {children}
-        <Footer />
+        <AppWrapper>
+          <Navbar />
+          <Sidebar />
+          {children}
+          <Footer />
+        </AppWrapper>
       </body>
     </html>
   );

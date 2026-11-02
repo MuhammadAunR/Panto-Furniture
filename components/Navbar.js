@@ -1,10 +1,15 @@
+'use client'
 import React from 'react'
 import Container from './Container'
 import Link from 'next/link'
 import { navOptions } from '@/constants/navOptions'
-import { Handbag } from 'lucide-react'
+import { Handbag, Menu } from 'lucide-react'
+import { useSidebar } from '@/app/context/SidebarConext'
 
 const Navbar = () => {
+
+    const { toggleSidebar } = useSidebar()
+
     return (
         <Container>
             <nav className='flex items-center justify-between py-5 text-white relative z-10'>
@@ -27,9 +32,14 @@ const Navbar = () => {
                     })}
                 </ul>
 
-                <div>
+                <div className='flex items-center gap-5'>
                     <span className='hover:text-highlight transition-colors ease-linear duration-300 cursor-pointer group'>
-                        <Handbag className='group-hover:-translate-y-0.5 transition-transform ease-linear duration-300'/>
+                        <Handbag className='group-hover:-translate-y-0.5 transition-transform ease-linear duration-300' />
+                    </span>
+                    <span
+                        onClick={toggleSidebar}
+                        className='lg:hidden'>
+                        <Menu />
                     </span>
                 </div>
             </nav>
