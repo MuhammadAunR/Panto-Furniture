@@ -17,14 +17,13 @@ const ProductSection = () => {
         async function getAllProducts() {
             let res = await fetchAllProducts()
             setProducts(res.data)
-            console.log(res)
         }
         getAllProducts()
     }, [activeCategory])
 
     useEffect(() => {
         setActiveCategoryProducts(
-            products.filter(
+            products?.filter(
                 item => item.category.toLowerCase() === activeCategory.toLowerCase()
             )
         )
@@ -61,7 +60,7 @@ const ProductSection = () => {
                 </div>
 
                 <div className='flex items-center justify-center flex-wrap gap-5'>
-                    {activeCategoryProducts.map((item, index) => {
+                    {activeCategoryProducts?.map((item, index) => {
                         return <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
