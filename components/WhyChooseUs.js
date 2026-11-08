@@ -8,9 +8,9 @@ import { motion } from 'motion/react'
 
 const WhyChooseUs = () => {
     return (
-        <div className='bg-white py-20 shadow-[0px_0px_12px_rgba(0,0,0,0.2)]'>
+        <div className='bg-white shadow-[0px_0px_12px_rgba(0,0,0,0.2)]'>
             <Container>
-                <section className='flex items-center justify-between gap-10 max-lg:flex-col'>
+                <section className='flex items-center justify-between gap-10 max-lg:flex-col py-20'>
                     <motion.h2
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
