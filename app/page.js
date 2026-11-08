@@ -6,8 +6,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 
-export default function Home() {
-  console.log(typeof ProductSection)
+export default function Home() {  
   return (
     <>
       <HeroSection />
