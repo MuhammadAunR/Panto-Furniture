@@ -6,7 +6,7 @@ import React from 'react'
 
 const HeroSection = () => {
     return (
-        <section className='flex flex-col items-center justify-center h-[calc(100vh-100px)]  gap-7 text-white'>
+        <section className='flex flex-col items-center justify-center h-[calc(100vh-70px)]  gap-7 text-white'>
 
             <div className='absolute inset-0'>
                 <Image
